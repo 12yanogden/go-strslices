@@ -2,7 +2,6 @@ package strslices
 
 import (
 	"regexp"
-	"slices"
 	"strings"
 )
 
@@ -47,6 +46,16 @@ func PrettyToSlice(s string) []string {
 	return strings.Split(s, "\n    ")
 }
 
-func Equals(a1, a2 []string) bool {
-	return slices.Equal(a1, a2)
+func Equals(slice1, slice2 []string) bool {
+	if len(slice1) != len(slice2) {
+		return false
+	}
+
+	for i := range slice1 {
+		if slice1[i] != slice2[i] {
+			return false
+		}
+	}
+
+	return true
 }
