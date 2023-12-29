@@ -39,7 +39,7 @@ func Pretty(a []string) string {
 
 func PrettyToSlice(s string) []string {
 	// Remove brackets
-	s = strings.TrimLeft(s, "[\n    ")
+	s = strings.TrimLeft(s, "[\n"+strings.Repeat(" ", 4))
 	s = strings.TrimRight(s, "\n]")
 
 	// Convert to array and return
