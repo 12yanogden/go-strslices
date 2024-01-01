@@ -57,3 +57,18 @@ func TestPrintStringToSlice(t *testing.T) {
 		t.Fatalf("\nExpected: " + Pretty(expected) + "\nActual: " + Pretty(actual))
 	}
 }
+
+func TestMaxLength(t *testing.T) {
+	slice := []string{
+		"1",
+		"2 ",
+		"3  ",
+		"2 ",
+	}
+	expected := 3
+	actual := MaxLength(slice)
+
+	if expected != actual {
+		t.Fatalf("\nExpected:\t%d\nActual:\t\t%d", expected, actual)
+	}
+}

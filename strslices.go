@@ -59,3 +59,15 @@ func Equals(slice1, slice2 []string) bool {
 
 	return true
 }
+
+func MaxLength(slice []string) int {
+	max := 0
+
+	for _, value := range slice {
+		if len(value) > max {
+			max = len(value)
+		}
+	}
+
+	return max
+}
