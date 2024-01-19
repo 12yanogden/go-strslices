@@ -72,3 +72,25 @@ func TestMaxLength(t *testing.T) {
 		t.Fatalf("\nExpected:\t%d\nActual:\t\t%d", expected, actual)
 	}
 }
+
+func TestRepeat(t *testing.T) {
+	slice := []string{"value1", "value2", "value3"}
+	expected := []string{"value1", "value2", "value3",
+		"value1", "value2", "value3",
+		"value1", "value2", "value3"}
+	actual := Repeat(slice, 3)
+
+	if !Equals(expected, actual) {
+		t.Fatalf("\nExpected:\t%#v\nActual:\t\t%#v\n", expected, actual)
+	}
+}
+
+func TestRepeatZero(t *testing.T) {
+	slice := []string{"value1", "value2", "value3"}
+	expected := []string{}
+	actual := Repeat(slice, 0)
+
+	if !Equals(expected, actual) {
+		t.Fatalf("\nExpected:\t%#v\nActual:\t\t%#v\n", expected, actual)
+	}
+}

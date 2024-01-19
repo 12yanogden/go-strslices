@@ -3,6 +3,8 @@ package strslices
 import (
 	"regexp"
 	"strings"
+
+	"github.com/12yanogden/intslices"
 )
 
 func Explode(text string, delimiter string) []string {
@@ -70,4 +72,14 @@ func MaxLength(slice []string) int {
 	}
 
 	return max
+}
+
+func Repeat(slice []string, count int) []string {
+	repeated := []string{}
+
+	for range intslices.Seq(1, count) {
+		repeated = append(repeated, slice...)
+	}
+
+	return repeated
 }
