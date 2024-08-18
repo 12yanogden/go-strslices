@@ -4,7 +4,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/12yanogden/intslices"
+	intslices "github.com/12yanogden/go-intslices"
 )
 
 func Explode(text string, delimiter string) []string {
